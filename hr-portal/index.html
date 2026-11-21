@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HR Workspace</title>
+<style>
+  :root { --ink:#1f2937; --quiet:#6b7280; --line:#e5e7eb; --bg:#f6f7f9; --card:#fff; --accent:#1c7c8c; --warn:#b45309; --ok:#15803d; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+  header { background:var(--card); border-bottom:1px solid var(--line); padding:14px 24px; display:flex; align-items:center; gap:12px; }
+  header h1 { font-size:17px; margin:0; } header span { color:var(--quiet); }
+  main { max-width:1100px; margin:20px auto; padding:0 16px; display:grid; grid-template-columns:2fr 1fr; gap:16px; }
+  .stats { grid-column:1/-1; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px; }
+  .stat b { display:block; font-size:24px; } .stat span { color:var(--quiet); }
+  h2 { font-size:14px; margin:0 0 12px; }
+  form { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+  input, select, button { font:inherit; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--ink); }
+  input[name=title], input[name=name] { flex:1 1 180px; }
+  button { background:var(--accent); color:#fff; border-color:var(--accent); cursor:pointer; }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:8px 6px; border-top:1px solid var(--line); }
+  th { color:var(--quiet); font-weight:600; font-size:12px; border-top:0; }
+  .pill { border:0; border-radius:999px; padding:2px 10px; font-size:12px; color:#fff; }
+  .s0 { background:var(--quiet); } .s1 { background:var(--warn); } .s2 { background:var(--ok); }
+  .x { background:none; border:0; color:var(--quiet); padding:0 4px; }
+  .late { color:#b91c1c; font-weight:600; }
+  ul { list-style:none; margin:0; padding:0; } li { padding:8px 0; border-top:1px solid var(--line); display:flex; justify-content:space-between; }
+  a { color:var(--accent); }
+  @media (max-width:760px) { main { grid-template-columns:1fr; } .stats { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header><h1>HR Workspace</h1><span>Tasks and documents for the HR team</span></header>
+<main>
+  <section class="stats">
+    <div class="card stat"><b id="open">0</b><span>Open tasks</span></div>
+    <div class="card stat"><b id="week">0</b><span>Due in the next 7 days</span></div>
+    <div class="card stat"><b id="done">0</b><span>Completed</span></div>
+  </section>
+  <section class="card">
+    <h2>Tasks</h2>
+    <form id="taskForm">
+      <input name="title" placeholder="Task" required>
+      <input name="owner" placeholder="Owner" required>
+      <input name="due" type="date" required>
+      <button>Add task</button>
+    </form>
+    <table><thead><tr><th>Task</th><th>Owner</th><th>Due</th><th>Status</th><th></th></tr></thead><tbody id="tasks"></tbody></table>
+  </section>
+  <section class="card">
+    <h2>Documents</h2>
+    <form id="docForm">
+      <input name="name" placeholder="Document name" required>
+      <input name="url" type="url" placeholder="OneDrive link" required>
+      <button>Add</button>
+    </form>
+    <ul id="docs"></ul>
+  </section>
+</main>
+<script>
+const STATUS = ["Not started", "In progress", "Done"];
+const day = n => new Date(Date.now() + n * 864e5).toISOString().slice(0, 10);
+const seed = {
+  tasks: [
+    { title: "Collect payroll inputs for the month", owner: "Payroll", due: day(3), s: 1 },
+    { title: "Book interviews for collections officer role", owner: "Recruitment", due: day(1), s: 0 },
+    { title: "Onboarding packs for new joiners", owner: "HR Admin", due: day(6), s: 1 },
+    { title: "Leave policy acknowledgements", owner: "HR Admin", due: day(-2), s: 0 },
+    { title: "Archive signed contracts to OneDrive", owner: "Personnel", due: day(-5), s: 2 },
+  ],
+  docs: [
+    { name: "Leave policy", url: "#" }, { name: "Onboarding checklist", url: "#" },
+    { name: "Interview scorecard", url: "#" }, { name: "Org chart", url: "#" },
+  ],
+};
+let data;
+try { data = JSON.parse(localStorage.getItem("hr-workspace")) || seed; } catch { data = seed; }
+const save = () => { try { localStorage.setItem("hr-workspace", JSON.stringify(data)); } catch {} };
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function render() {
+  const today = day(0), soon = day(7);
+  data.tasks.sort((a, b) => a.s - b.s || a.due.localeCompare(b.due));
+  document.getElementById("tasks").innerHTML = data.tasks.map((t, i) => `<tr>
+    <td>${esc(t.title)}</td><td>${esc(t.owner)}</td>
+    <td class="${t.s < 2 && t.due < today ? "late" : ""}">${t.due}</td>
+    <td><button class="pill s${t.s}" data-cycle="${i}">${STATUS[t.s]}</button></td>
+    <td><button class="x" data-del="${i}" title="Delete">&times;</button></td></tr>`).join("");
+  document.getElementById("docs").innerHTML = data.docs.map((d, i) =>
+    `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.name)}</a><button class="x" data-doc="${i}" title="Remove">&times;</button></li>`).join("");
+  const open = data.tasks.filter(t => t.s < 2);
+  document.getElementById("open").textContent = open.length;
+  document.getElementById("week").textContent = open.filter(t => t.due >= today && t.due <= soon).length;
+  document.getElementById("done").textContent = data.tasks.length - open.length;
+  save();
+}
+
+document.body.addEventListener("click", e => {
+  const d = e.target.dataset;
+  if (d.cycle) data.tasks[d.cycle].s = (data.tasks[d.cycle].s + 1) % 3;
+  else if (d.del) data.tasks.splice(d.del, 1);
+  else if (d.doc) data.docs.splice(d.doc, 1);
+  else return;
+  render();
+});
+document.getElementById("taskForm").addEventListener("submit", e => {
+  e.preventDefault(); const f = e.target, el = f.elements;  // f.title would be the form's own attribute
+  data.tasks.push({ title: el.title.value.trim(), owner: el.owner.value.trim(), due: el.due.value, s: 0 });
+  f.reset(); render();
+});
+document.getElementById("docForm").addEventListener("submit", e => {
+  e.preventDefault(); const f = e.target, el = f.elements, url = el.url.value.trim();
+  if (!/^https?:\/\//i.test(url)) return alert("Use an http or https link");
+  data.docs.push({ name: el.name.value.trim(), url });
+  f.reset(); render();
+});
+render();
+</script>
+</body>
+</html>

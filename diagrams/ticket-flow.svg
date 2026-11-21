@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 290" width="1000" height="290" font-family="Segoe UI, system-ui, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6b7280"/></marker></defs>
+  <rect width="1000" height="290" fill="#ffffff"/>
+  <text font-size="18" font-weight="600" fill="#1f2937" x="20" y="36">Every alert or fault runs through one Jira ticket, from report to close</text>
+  <text font-size="12.5" fill="#6b7280" x="20" y="58">Incident handling flow for security alerts and IT faults</text>
+
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="20" y="100" width="140" height="80" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="90" y="124">Alert or report</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="90" y="142">Sophos, F5 logs</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="90" y="158">or a staff call</text>
+  <rect fill="#e6f2f4" stroke="#1c7c8c" stroke-width="2" x="188" y="100" width="140" height="80" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="258" y="124">Jira ticket</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="258" y="142">Logged and</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="258" y="158">categorised</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="356" y="100" width="140" height="80" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="426" y="124">Triage</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="426" y="142">Rate severity,</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="426" y="158">assign an owner</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="524" y="100" width="140" height="80" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="594" y="124">Contain and fix</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="594" y="142">Isolate, patch,</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="594" y="158">reset or restore</text>
+  <polygon fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" points="694,140 754,100 814,140 754,180"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="754" y="144">Resolved?</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="842" y="100" width="140" height="80" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="912" y="124">Document, close</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="912" y="142">Root cause and</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="912" y="158">actions recorded</text>
+
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M160 140H186" marker-end="url(#a)"/>
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M328 140H354" marker-end="url(#a)"/>
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M496 140H522" marker-end="url(#a)"/>
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M664 140H692" marker-end="url(#a)"/>
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M814 140H840" marker-end="url(#a)"/>
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M754 180V220H594V182" marker-end="url(#a)"/>
+  <text font-size="11.5" fill="#6b7280" text-anchor="middle" x="828" y="130">yes</text>
+  <text font-size="11.5" fill="#6b7280" text-anchor="middle" x="674" y="236">no: back to the fix</text>
+  <text font-size="12.5" fill="#6b7280" x="20" y="272">Each ticket keeps the timeline, actions and root cause, so incident reports and audits come from one place.</text>
+</svg>

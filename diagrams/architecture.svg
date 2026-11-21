@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="Segoe UI, system-ui, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6b7280"/></marker></defs>
+  <rect width="1000" height="640" fill="#ffffff"/>
+  <text font-size="18" font-weight="600" fill="#1f2937" x="24" y="36">All traffic passes the F5 cloud firewall; core data stays with Raya Cloud in Egypt</text>
+  <text font-size="12.5" fill="#6b7280" x="24" y="58">Representative, anonymised view of a consumer finance company's IT estate: no hostnames, addresses or company data</text>
+
+  <rect fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.25" x="24" y="80" width="672" height="216" rx="8"/>
+  <text font-size="13.5" font-weight="600" fill="#1f2937" x="40" y="104">Head office (on-premises)</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="40" y="120" width="200" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="140" y="144">Staff laptops and PCs</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="140" y="162">Sophos endpoint agent</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="140" y="178">Microsoft 365 and OneDrive</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="260" y="120" width="200" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="360" y="144">Switching and Wi-Fi</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="360" y="162">Switches and access points</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="360" y="178">IP addressing and cabling</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="480" y="120" width="200" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="580" y="144">Domain controller</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="580" y="162">Windows Server</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="580" y="178">AD DS and Group Policy</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="40" y="208" width="200" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="140" y="232">Hikvision CCTV</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="140" y="250">Office cameras and NVR</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="140" y="266">Live view and recording</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="260" y="208" width="200" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="360" y="232">Call centre system</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="360" y="250">Agent lines and queues</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="360" y="266">Customer-facing teams</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="480" y="208" width="200" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="580" y="232">HR portal</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="580" y="250">Internal web app</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="580" y="266">HR files and task tracking</text>
+
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="720" y="80" width="256" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="848" y="104">Remote staff</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="848" y="122">FortiClient VPN</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="848" y="138">MFA on Microsoft 365 sign-in</text>
+
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M360 296V334" marker-end="url(#a)"/><text font-size="11.5" fill="#6b7280" x="368" y="320">Office LAN</text>
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M848 152V334" marker-end="url(#a)"/><text font-size="11.5" fill="#6b7280" x="856" y="250">FortiClient VPN tunnel</text>
+
+  <rect fill="#e6f2f4" stroke="#1c7c8c" stroke-width="2" x="24" y="336" width="952" height="56" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="500" y="360">F5 Firewall as a Service (FWaaS)</text>
+  <text font-size="11.5" fill="#374151" text-anchor="middle" x="500" y="378">Office and remote traffic is filtered before it reaches the internet, Raya Cloud or SaaS tools</text>
+
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M320 392V430" marker-end="url(#a)"/>
+  <path fill="none" stroke="#6b7280" stroke-width="1.25" d="M808 392V430" marker-end="url(#a)"/>
+
+  <rect fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.25" x="24" y="432" width="592" height="128" rx="8"/>
+  <text font-size="13.5" font-weight="600" fill="#1f2937" x="40" y="456">Raya Cloud, hosted in Egypt</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="40" y="472" width="176" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="128" y="496">Central Application</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="128" y="514">Core lending platform</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="128" y="530">Loans and collections</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="232" y="472" width="176" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="320" y="496">Oracle Database</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="320" y="514">Customer and loan data</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="320" y="530">Kept in Egypt</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="424" y="472" width="176" height="72" rx="8"/>
+  <text font-size="13" font-weight="600" fill="#1f2937" text-anchor="middle" x="512" y="496">Middleware</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="512" y="514">Managed by Raya</text><text font-size="11.5" fill="#374151" text-anchor="middle" x="512" y="530">Links app to partners</text>
+
+  <rect fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.25" x="640" y="432" width="336" height="180" rx="8"/>
+  <text font-size="13.5" font-weight="600" fill="#1f2937" x="656" y="456">Cloud services</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="656" y="472" width="304" height="36" rx="8"/><text font-size="11.5" fill="#374151" text-anchor="middle" x="808" y="495">Microsoft 365: admin centre, OneDrive</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="656" y="516" width="304" height="36" rx="8"/><text font-size="11.5" fill="#374151" text-anchor="middle" x="808" y="539">Sophos Central: endpoint policy</text>
+  <rect fill="#ffffff" stroke="#9ca3af" stroke-width="1.25" x="656" y="560" width="304" height="36" rx="8"/><text font-size="11.5" fill="#374151" text-anchor="middle" x="808" y="583">Jira: IT service desk tickets</text>
+</svg>
