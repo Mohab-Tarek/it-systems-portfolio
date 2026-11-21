@@ -61,4 +61,4 @@ Run it as Domain Admin on a Windows Server evaluation VM after `Install-ADDSFore
 
 ## Contact
 
-Mohab Tarek, Systems and Security Engineer, Cairo
+Mohab Tarek, Systems Engineer, Cairo
