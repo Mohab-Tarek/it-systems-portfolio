@@ -2,7 +2,7 @@
 
 Work from my role as Systems Engineer at a consumer finance company in Egypt (June 2024 to present), rebuilt from scratch so it can be shared publicly. The employer is not named, and nothing here was taken from its systems. Sample data is synthetic.
 
-What I run there: an F5 cloud firewall (FWaaS), FortiClient VPN for remote staff, Sophos endpoint protection, a Windows Server domain controller with Active Directory and Group Policy, Microsoft 365 and OneDrive administration, the office network, Hikvision CCTV, the call centre system, Jira IT ticketing, and day-to-day coordination with Raya Cloud, which hosts our Central Application, its Oracle database and the middleware.
+What I run there: an F5 cloud firewall (FWaaS), FortiClient VPN for remote staff, Sophos endpoint protection, a Windows Server domain controller with Active Directory and Group Policy, Microsoft 365 and OneDrive administration, the office network, Hikvision CCTV, the Issabel call manager, Jira IT ticketing, remote support through AnyDesk and Slack, and day-to-day coordination with Raya Cloud, which hosts our Central Application, its Oracle database and the middleware.
 
 ## Architecture
 
