@@ -10,6 +10,13 @@ What I run there: an F5 cloud firewall (FWaaS), FortiClient VPN for remote staff
 
 Office and remote traffic goes through the F5 firewall before it reaches the internet, Raya Cloud or our SaaS tools. Core lending data stays in Raya's Egyptian data centres. Source: [diagrams/architecture.svg](diagrams/architecture.svg).
 
+## FRA and PDPL compliance
+
+I enforced FRA Board Resolution 227 of 2025 and FRA Decree 139 of 2023, and wrote the breach playbook for the PDPL Executive Regulations (Ministerial Decree 816 of 2025).
+
+- [Compliance guide](compliance/README.md): what each rule asks for, who owns what in a company of around 50 staff, the steps in order, and a yearly evidence calendar.
+- [Personal data breach playbook](compliance/pdpl-breach-playbook.md): the 72-hour PDPC clock, roles, containment steps and notice wording.
+
 ## Incident handling
 
 ![Incident handling flow](images/ticket-flow.png)
